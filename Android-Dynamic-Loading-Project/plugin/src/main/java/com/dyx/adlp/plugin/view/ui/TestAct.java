@@ -17,6 +17,8 @@ import com.dyx.adlp.plugin.view.BaseActivity;
  * alter remark：
  */
 public class TestAct extends BaseActivity {
+    public static final String CLASS_NAME = "com.dyx.adlp.plugin.view.ui.TestAct";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
