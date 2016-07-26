@@ -1,9 +1,11 @@
-package com.dyx.adlp;
+package com.dyx.adlp.view.ui;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.dyx.adlp.R;
+import com.dyx.adlp.view.BaseActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -18,7 +20,7 @@ import butterknife.OnClick;
  * alter time：16/7/25 下午11:46
  * alter remark：
  */
-public class HostAct extends Activity {
+public class HostAct extends BaseActivity {
     @Bind(R.id.but_start_proxy)
     Button butStartProxy;
 
@@ -29,15 +31,15 @@ public class HostAct extends Activity {
         ButterKnife.bind(this);
     }
 
+
     @OnClick(R.id.but_start_proxy)
     public void onClick() {
         toProxyAct();
     }
 
     private void toProxyAct() {
-        Intent intent = new Intent(HostAct.this, ProxyAct.class);
-        //TODO apk文件地址
-        intent.putExtra(ProxyAct.INTENT_PROXY_APK, "");
+        Intent intent = new Intent(HostAct.this, ProxyActivity.class);
+        intent.putExtra(ProxyActivity.EXTRA_DEX_PATH, "/mnt/sdcard/dynamicLoadHost/plugin.apk");
         startActivity(intent);
     }
 }
